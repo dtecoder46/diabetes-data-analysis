@@ -63,5 +63,7 @@ Link TBD
 2. Presentation tool: https://gamma.app/create
 3. The Markdown Guide: https://www.markdownguide.org/
 4. Diabetes overview: https://my.clevelandclinic.org/health/diseases/7104-diabetes
-5. Coding assistant: https://claude.ai
+5. Coding assistants: 
+- Claude: https://claude.ai
+- Gemma: https://developers.google.com/edge/gallery
 6. pandas: https://pandas.pydata.org/
