@@ -29,6 +29,18 @@ Diabetes is a health condition where blood sugar spikes due to insufficient insu
 
 According to these descriptive stats, there are 2768 entries in this dataset. The average age of people listed in this dataset is approximately 33 years old. The range of ages included is 21 to 81 years old. The standard deviation is 11 years, which is large in the context of age, so the data points are spread out, indicating high variability in the age data.
 
+### BMI
+
+![BMI variable descriptive stats](results/BMI_descriptive.png)
+
+The descriptive stats give both a mean and a median. To figure out which one to use, we must see if the data is skewed or has outliers by creating a histogram.
+
+![BMI histogram](results/BMI_histogram.png)
+
+There is an insignificant difference between the distance from the minimum to the middle and the distance from the middle to the maximum. However, there is a clear outlier on the left side of the histogram, so it is more appropriate to use the median (32.2 BMI)
+
+The range of BMIs is 0 to 80.6. The standard deviation is approximately 8.08 BMI.
+
 ## Visualizations
 
 ## Hypothesis Testing
@@ -67,3 +79,7 @@ Link TBD
 - Claude: https://claude.ai
 - Gemma: https://developers.google.com/edge/gallery
 6. pandas: https://pandas.pydata.org/
+7. R list object to type double: https://stackoverflow.com/questions/12384071/how-to-coerce-a-list-object-to-type-double
+8. When to use mean and median: https://www.statology.org/when-to-use-mean-vs-median/
+9. ggplot2: https://ggplot2.tidyverse.org/index.html
+
