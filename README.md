@@ -82,4 +82,4 @@ Link TBD
 7. R list object to type double: https://stackoverflow.com/questions/12384071/how-to-coerce-a-list-object-to-type-double
 8. When to use mean and median: https://www.statology.org/when-to-use-mean-vs-median/
 9. ggplot2: https://ggplot2.tidyverse.org/index.html
-
+10. BMI calculator: https://www.rapidtables.com/calc/body/bmi-calculator.html
