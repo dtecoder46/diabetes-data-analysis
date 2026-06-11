@@ -39,7 +39,7 @@ The descriptive stats give both a mean and a median. To figure out which one to 
 
 There is an insignificant difference between the distance from the minimum to the middle and the distance from the middle to the maximum. However, there is a clear outlier on the left side of the histogram, so it is more appropriate to use the median (32.2 BMI)
 
-The range of BMIs is 0 to 80.6. The standard deviation is approximately 8.08 BMI.
+The range of BMIs is 0 to 80.6. The standard deviation is approximately 8.08 BMI. Any BMI below 18.4 indicates significantly low mass, so the standard deviation is very small in this context. Therefore, the data points are tightly clustered around the median, indicating high variability in the age data.
 
 ## Visualizations
 
