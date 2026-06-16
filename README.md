@@ -77,6 +77,21 @@ Create a SAS account, then open SAS OnDemand for Academics. Paste the SAS code i
 
 Link TBD
 
+## Log of Issues
+```diff
+- Problem: The entire dataset got forced into one row of the 2D array 
++ Solution: Use row = [file].readline(), not row = [file].readlines()
+
+- Problem: When the CSV file is read, every other line is skipped
++ Solution: Make the for loop header as for row in range(1,[number of rows]) to include everything instead of using for row in [file name]
+`
+- Problem: When printing array[x][y], only one character is printed
++ Solution: Since Python interprets each row of the CSV as a string, add .split(",") onto the end to make each row a list of values 
+
+- Problem: I used pop(1) to remove the first row, but the first row is unchanged
++ Solution: Indexing starts at 0, so use pop(0)
+```
+
 ## Sources/Tools Used
 
 1. Dataset link: https://www.kaggle.com/datasets/nanditapore/healthcare-diabetes
@@ -95,3 +110,5 @@ Link TBD
 12. SAS Descriptive Stats: https://research.library.gsu.edu/c.php?g=925001&p=7660893
 13. BP ranges: https://www.nhlbi.nih.gov/health/high-blood-pressure
 14. More BP ranges: https://www.hri.org.au/health/learn/risk-factors/what-is-normal-blood-pressure-by-age
+15. w3Schools Python: https://www.w3schools.com/python/default.asp
+16. w3Schools SQL: https://www.w3schools.com/sql/default.asp
