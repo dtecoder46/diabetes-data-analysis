@@ -90,6 +90,9 @@ Link TBD
 
 - Problem: I used pop(1) to remove the first row, but the first row is unchanged
 + Solution: Indexing starts at 0, so use pop(0)
+
+- Problem: I initially set diabetes_status to the last element in a row of the 2D array, then I split diabetes_status using the junk character \n as the delimiter, then I reassigned diabetes_status to the first element of the split array (aka the clean value), but this change is not shown when I print out the entire 2D array
++ Solution: When you reassigned diabetes_status, it became disassociated from the row's last element and therefore disassociated from the entire 2D array. You need to reassign the new diabetes_status to the row's last element.
 ```
 
 ## Sources/Tools Used
