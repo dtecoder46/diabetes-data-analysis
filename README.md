@@ -73,7 +73,7 @@ Copy and paste the contents of either desc.r or ttest.r. Visit [Posit Cloud](pos
 
 Create a SAS account, then open SAS OnDemand for Academics. Paste the SAS code into a SAS file. Right-click on Files (Home), click Upload Files, then import the CSV file. Then, run the SAS file.
 
-### PowerBI Dashboard
+### Tableau Dashboard
 
 Link TBD
 
@@ -98,20 +98,19 @@ Link TBD
 ## Sources/Tools Used
 
 1. Dataset link: https://www.kaggle.com/datasets/nanditapore/healthcare-diabetes
-2. Presentation tool: https://gamma.app/create
-3. The Markdown Guide: https://www.markdownguide.org/
-4. Diabetes overview: https://my.clevelandclinic.org/health/diseases/7104-diabetes
-5. Coding assistants: 
+2. The Markdown Guide: https://www.markdownguide.org/
+3. Diabetes overview: https://my.clevelandclinic.org/health/diseases/7104-diabetes
+4. Coding assistants: 
 - Claude: https://claude.ai
 - Gemma: https://developers.google.com/edge/gallery
-6. pandas: https://pandas.pydata.org/
-7. R list object to type double: https://stackoverflow.com/questions/12384071/how-to-coerce-a-list-object-to-type-double
-8. When to use mean and median: https://www.statology.org/when-to-use-mean-vs-median/
-9. ggplot2: https://ggplot2.tidyverse.org/index.html
-10. "Learning SAS in the Computer Lab" (3rd Edition) by Elliott and Morrell
-11. SAS CSV import: https://youtu.be/d7Xnvkn0D9I?si=2t-y-YDDQt60PFOb
-12. SAS Descriptive Stats: https://research.library.gsu.edu/c.php?g=925001&p=7660893
-13. BP ranges: https://www.nhlbi.nih.gov/health/high-blood-pressure
-14. More BP ranges: https://www.hri.org.au/health/learn/risk-factors/what-is-normal-blood-pressure-by-age
-15. w3Schools Python: https://www.w3schools.com/python/default.asp
-16. w3Schools SQL: https://www.w3schools.com/sql/default.asp
+5. pandas: https://pandas.pydata.org/
+6. R list object to type double: https://stackoverflow.com/questions/12384071/how-to-coerce-a-list-object-to-type-double
+7. When to use mean and median: https://www.statology.org/when-to-use-mean-vs-median/
+8. ggplot2: https://ggplot2.tidyverse.org/index.html
+9. "Learning SAS in the Computer Lab" (3rd Edition) by Elliott and Morrell
+10. SAS CSV import: https://youtu.be/d7Xnvkn0D9I?si=2t-y-YDDQt60PFOb
+11. SAS Descriptive Stats: https://research.library.gsu.edu/c.php?g=925001&p=7660893
+12. BP ranges: https://www.nhlbi.nih.gov/health/high-blood-pressure
+13. More BP ranges: https://www.hri.org.au/health/learn/risk-factors/what-is-normal-blood-pressure-by-age
+14. w3Schools Python: https://www.w3schools.com/python/default.asp
+15. w3Schools SQL: https://www.w3schools.com/sql/default.asp
