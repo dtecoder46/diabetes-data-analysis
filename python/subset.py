@@ -32,8 +32,8 @@ for row in range(0,2766): # range of indices in the 2D array
 conn = sqlite3.connect(':memory:')
 cursor = conn.cursor()
 
-# cursor.execute(command)
-# conn.commit()
+cursor.execute('CREATE TABLE diabetes (outcome INTEGER, bmi FLOAT, blood_pressure INTEGER, age INTEGER);)
+conn.commit()
 
 # cursor.execute(select_command)
 # result = cursor.fetch()
