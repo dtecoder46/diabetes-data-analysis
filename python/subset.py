@@ -40,7 +40,15 @@ conn.commit()
 # Loop over 2D array, insert values from each row
 
 for line in range(0,2766):
-    print(data[line][1])
+
+    # diabetes outcome: column index 9
+    # bmi: column index 6
+    # blood pressure: column index 3
+    # age: column index 8
+
+    insert = f'INSERT INTO reduced_dataset VALUES ({data[line][9]}, {data[line][6]}, {data[line][3]}, {data[line][8]}'
+
+    cursor.execute(insert)
 
 # cursor.execute(select_command)
 # result = cursor.fetch()
