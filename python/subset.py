@@ -46,9 +46,18 @@ for line in range(0,2766):
     # blood pressure: column index 3
     # age: column index 8
 
-    insert = f'INSERT INTO reduced_dataset VALUES ({data[line][9]}, {data[line][6]}, {data[line][3]}, {data[line][8]}'
+    insert = f'INSERT INTO diabetes VALUES ({data[line][9]}, {data[line][6]}, {data[line][3]}, {data[line][8]});'
 
     cursor.execute(insert)
 
-# cursor.execute(select_command)
-# result = cursor.fetch()
+# Subset by diabetes outcome
+
+# Subset patients with diabetes
+
+class1_subset = cursor.execute('SELECT * FROM diabetes WHERE outcome = 1;')
+diabetes_class1 = class1_subset.fetchall() # list
+
+# Subset patients without diabetes
+
+class0_subset = cursor.execute('SELECT * FROM diabetes WHERE outcome = 0;')
+diabetes_class0 = class0_subset.fetchall()

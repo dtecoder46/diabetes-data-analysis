@@ -114,3 +114,5 @@ Link TBD
 13. More BP ranges: https://www.hri.org.au/health/learn/risk-factors/what-is-normal-blood-pressure-by-age
 14. w3Schools Python: https://www.w3schools.com/python/default.asp
 15. w3Schools SQL: https://www.w3schools.com/sql/default.asp
+16. w3Schools Python sqlite3 module: https://www.w3schools.com/python/ref_module_sqlite3.asp
+17. python sqlite3 module docs: https://docs.python.org/3/library/sqlite3.html
