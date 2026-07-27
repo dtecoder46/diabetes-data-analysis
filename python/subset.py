@@ -26,7 +26,6 @@ for row in range(0,2766): # range of indices in the 2D array
 		
 	array_row[row_length - 1] = diabetes_status
 
-
 # SQLite3 setup
 
 conn = sqlite3.connect(':memory:')
@@ -34,7 +33,7 @@ cursor = conn.cursor()
 
 # Table creation
 
-cursor.execute('CREATE TABLE diabetes (outcome INTEGER, bmi FLOAT, blood_pressure INTEGER, age INTEGER);')
+cursor.execute('CREATE TABLE diabetes (outcome INTEGER, bmi FLOAT, blood_pressure INTEGER, age INTEGER, bmi_class TEXT);')
 conn.commit()
 
 # Loop over 2D array, insert values from each row
@@ -45,8 +44,24 @@ for line in range(0,2766):
     # bmi: column index 6
     # blood pressure: column index 3
     # age: column index 8
+    # bmi_class: see conditionals below
 
-    insert = f'INSERT INTO diabetes VALUES ({data[line][9]}, {data[line][6]}, {data[line][3]}, {data[line][8]});'
+    bmi_class = ""
+
+    # data[line][6]: bmi
+
+    bmi = float(data[line][6])
+
+    if bmi >= 19 and bmi <= 24:
+        bmi_class = "normal weight"
+    elif bmi >= 25 and bmi <= 29:
+        bmi_class = "overweight"
+    elif bmi >= 30 and bmi <= 39:
+        bmi_class = "obese"
+    else:
+        bmi_class = "extreme obesity"
+
+    insert = f'INSERT INTO diabetes (outcome, bmi, blood_pressure, age, bmi_class) VALUES ({data[line][9]}, {data[line][6]}, {data[line][3]}, {data[line][8]}, \"{bmi_class}\");'
 
     cursor.execute(insert)
 
@@ -56,6 +71,8 @@ for line in range(0,2766):
 
 class1_subset = cursor.execute('SELECT * FROM diabetes WHERE outcome = 1;')
 diabetes_class1 = class1_subset.fetchall() # list
+
+print(diabetes_class1)
 
 # Subset patients without diabetes
 
