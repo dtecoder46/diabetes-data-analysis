@@ -33,7 +33,11 @@ cursor = conn.cursor()
 
 # Table creation
 
+<<<<<<< HEAD
 cursor.execute('CREATE TABLE diabetes (outcome INTEGER, bmi FLOAT, blood_pressure INTEGER, age INTEGER, bmi_class TEXT);')
+=======
+cursor.execute('CREATE TABLE diabetes (outcome INTEGER, bmi FLOAT, blood_pressure INTEGER, age INTEGER, bmi_class TEXT(15);')
+>>>>>>> 3e622d9ae84bdd92c6f847c8d523d500cb5b0a6d
 conn.commit()
 
 # Loop over 2D array, insert values from each row
@@ -50,7 +54,11 @@ for line in range(0,2766):
 
     # data[line][6]: bmi
 
+<<<<<<< HEAD
     bmi = float(data[line][6])
+=======
+    bmi = data[line][6]
+>>>>>>> 3e622d9ae84bdd92c6f847c8d523d500cb5b0a6d
 
     if bmi >= 19 and bmi <= 24:
         bmi_class = "normal weight"
