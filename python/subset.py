@@ -1,6 +1,23 @@
 import sqlite3
 
 
+"""
+Name: array2d_to_csv
+Purpose: to transform the 2D array output from an SQL query into CSV format
+Parameters: array_2d - the 2D array to be transformed
+Return: CSV_string
+"""
+def array2d_to_csv(array_2d):
+	CSV_string = ""
+
+	for row in diabetes_class1:
+        	for column in diabetes_class1[row]:
+			CSV_string += diabetes_class1[row][column]
+			CSV_string += ","
+		CSV_string += "\n"
+	
+	return CSV_string
+
 csv = open("data.csv")
 data = []
 
@@ -33,11 +50,7 @@ cursor = conn.cursor()
 
 # Table creation
 
-<<<<<<< HEAD
 cursor.execute('CREATE TABLE diabetes (outcome INTEGER, bmi FLOAT, blood_pressure INTEGER, age INTEGER, bmi_class TEXT);')
-=======
-cursor.execute('CREATE TABLE diabetes (outcome INTEGER, bmi FLOAT, blood_pressure INTEGER, age INTEGER, bmi_class TEXT(15);')
->>>>>>> 3e622d9ae84bdd92c6f847c8d523d500cb5b0a6d
 conn.commit()
 
 # Loop over 2D array, insert values from each row
@@ -54,11 +67,7 @@ for line in range(0,2766):
 
     # data[line][6]: bmi
 
-<<<<<<< HEAD
     bmi = float(data[line][6])
-=======
-    bmi = data[line][6]
->>>>>>> 3e622d9ae84bdd92c6f847c8d523d500cb5b0a6d
 
     if bmi >= 19 and bmi <= 24:
         bmi_class = "normal weight"
@@ -78,9 +87,11 @@ for line in range(0,2766):
 # Subset patients with diabetes
 
 class1_subset = cursor.execute('SELECT * FROM diabetes WHERE outcome = 1;')
-diabetes_class1 = class1_subset.fetchall() # list
+diabetes_class1 = class1_subset.fetchall() # 2D array	
 
-print(diabetes_class1)
+class1_csv_string = array2d_to_csv(diabetes_class1)
+
+print(class1_csv_string)
 
 # Subset patients without diabetes
 
