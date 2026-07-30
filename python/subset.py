@@ -10,9 +10,9 @@ Return: CSV_string
 def array2d_to_csv(array_2d):
 	CSV_string = ""
 
-	for row in diabetes_class1:
-        	for column in diabetes_class1[row]:
-			CSV_string += diabetes_class1[row][column]
+	for row in range(len(array_2d)):
+		for column in range(len(array_2d[row])):
+			CSV_string += str(array_2d[row][column])
 			CSV_string += ","
 		CSV_string += "\n"
 	
@@ -89,11 +89,28 @@ for line in range(0,2766):
 class1_subset = cursor.execute('SELECT * FROM diabetes WHERE outcome = 1;')
 diabetes_class1 = class1_subset.fetchall() # 2D array	
 
+print(diabetes_class1)
+# Convert to CSV format
+
 class1_csv_string = array2d_to_csv(diabetes_class1)
 
-print(class1_csv_string)
+# Send CSV string to a CSV file
+
+file = open("diabetes_class1.csv", "w")
+file.write(class1_csv_string)
+file.close()
 
 # Subset patients without diabetes
 
 class0_subset = cursor.execute('SELECT * FROM diabetes WHERE outcome = 0;')
 diabetes_class0 = class0_subset.fetchall()
+
+# Convert to CSV format
+
+class0_csv_string = array2d_to_csv(diabetes_class0)
+
+# Send CSV string to a CSV file
+
+file2 = open("diabetes_class0.csv", "w")
+file2.write(class0_csv_string)
+file.close()

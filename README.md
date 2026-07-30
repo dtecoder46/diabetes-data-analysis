@@ -93,6 +93,10 @@ Link TBD
 
 - Problem: I initially set diabetes_status to the last element in a row of the 2D array, then I split diabetes_status using the junk character \n as the delimiter, then I reassigned diabetes_status to the first element of the split array (aka the clean value), but this change is not shown when I print out the entire 2D array
 + Solution: When you reassigned diabetes_status, it became disassociated from the row's last element and therefore disassociated from the entire 2D array. You need to reassign the new diabetes_status to the row's last element.
+
+- Problem, 7/30/26: When I look at the subset CSV files, I find that bmi_status and the last row of data are cut out completely
++ Solution: You subtracted 1 from the row length and column length, which cutoff the nested loop before it could reach the last column and row. Putting only one number in range() means it by default starts at 0 (the first list index) and ends one before the specified number (in this case, the length of the row/column minus one, which is perfectly in range, hence why the extra subtraction from the length was not needed)
+
 ```
 
 ## Sources/Tools Used
