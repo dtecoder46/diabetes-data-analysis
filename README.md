@@ -35,7 +35,7 @@ According to these descriptive stats, there are 2768 entries in this dataset. Th
 
 The descriptive stats give both a mean and a median. To figure out which one to use, we must see if the data is skewed or has outliers by creating a histogram.
 
-![BMI histogram](./results/BMI_histogram.png)
+![BMI histogram](results/bmi_histogram.png)
 
 There is an insignificant difference between the distance from the minimum to the middle and the distance from the middle to the maximum. However, there is a clear outlier on the left side of the histogram, so it is more appropriate to use the median (32.2 BMI)
 
