@@ -51,6 +51,18 @@ The average blood pressure is 69.13 mmHg diastolic.
 
 ## Visualizations
 
+### BMI Class Distribution
+
+![BMI class distribution per diabetes outcome](results/bmi_class_piechart.png)
+
+Across both diabetes outcome classes, the majority of patients are considered overweight and above, while a small minority of patients are considered to be at normal weight. The reason for this could be that all patients recorded in this dataset are stuck in unhealthy habits. However, the clear difference between the two diabetes outcome groups is the proportions. Specifically, there are significantly fewer patients with normal weight in the group of patients with diabetes (class 1) than in the group of patients without diabetes (class 0), showing how diabetes and high BMI are strongly associated with each other.
+
+### Blood Pressure
+
+![Average blood pressure by diabetes outcome barchart](results/blood_pressure_barchart.png)
+
+According to this bar chart and the tooltips shown in the dashboard (not depicted in this image), the average blood pressure of patients without diabetes is 68.119 mmHg diastolic, and the average blood pressure of patients without diabetes is 71.070 mmHg diastolic. The blood pressures of the two diabetes outcome groups are close together likely due to the unhealthy habits of all patients in this dataset. But on average, the patients with diabetes have higher blood pressures than patients without diabetes (a difference of 2.951 mmHg diastolic in favor of patients with diabetes), implying the strong association of high blood pressure and diabetes. 
+
 ## Hypothesis Testing
 
 ## Insights
@@ -75,7 +87,7 @@ Create a SAS account, then open SAS OnDemand for Academics. Paste the SAS code i
 
 ### Tableau Dashboard
 
-Link TBD
+https://public.tableau.com/views/DiabetesAnalysis_17858119015890/Dashboard1?:language=en-US&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link
 
 ## Log of Issues
 ```diff
