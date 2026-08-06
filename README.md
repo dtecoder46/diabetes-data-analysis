@@ -65,6 +65,23 @@ According to this bar chart and the tooltips shown in the dashboard (not depicte
 
 ## Hypothesis Testing
 
+### Test 1: Is diabetes more prevalent in older people? (age and diabetes outcome)
+
+#### T-test
+
+One-tail t-test using the diabetes class 1 subset (patients with diabetes):
+- H0 (null hypothesis): Average age = 50 years
+- Ha (alt hypothesis): Average age > 50 years
+
+If p > 0.05, fail to reject null
+If p < 0.05, reject null
+
+![Age t-test results w/ test statistic and p-value](results/age_ttest.png)
+
+According to the t-test results, the p-value is 1.8597552826122074e-144, which is significantly smaller than 0.05, so we can reject the null hypothesis that the average age of the patients with diabetes is equal to 50 years. Therefore, the average age of the diabetes patients is greater than 50 years, implying the correlation between old age and diabetes.
+
+#### Confidence intervals
+
 ## Insights
 
 ## How to Run/See the Analysis Files
@@ -109,6 +126,8 @@ https://public.tableau.com/views/DiabetesAnalysis_17858119015890/Dashboard1?:lan
 - Problem, 7/30/26: When I look at the subset CSV files, I find that bmi_status and the last row of data are cut out completely
 + Solution: You subtracted 1 from the row length and column length, which cutoff the nested loop before it could reach the last column and row. Putting only one number in range() means it by default starts at 0 (the first list index) and ends one before the specified number (in this case, the length of the row/column minus one, which is perfectly in range, hence why the extra subtraction from the length was not needed)
 
+- Problem, 8/4/26: When I try to extract a column from a 2D array, it returns single numbers instead of the entire number
++ Solution: Python interprets each split line as a string since you reassigned the split line back into the line variable. Add each split line to a different list
 ```
 
 ## Sources/Tools Used
@@ -132,3 +151,6 @@ https://public.tableau.com/views/DiabetesAnalysis_17858119015890/Dashboard1?:lan
 15. w3Schools SQL: https://www.w3schools.com/sql/default.asp
 16. w3Schools Python sqlite3 module: https://www.w3schools.com/python/ref_module_sqlite3.asp
 17. python sqlite3 module docs: https://docs.python.org/3/library/sqlite3.html
+18. SciPy ttest: https://www.datacamp.com/tutorial/an-introduction-to-python-t-tests
+19. NumPy array conversion: https://numpy.org/doc/stable/user/basics.creation.html
+20. SciPy ttest_1samp() parameters: https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.ttest_1samp.html#scipy.stats.ttest_1samp
