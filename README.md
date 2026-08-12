@@ -65,22 +65,40 @@ According to this bar chart and the tooltips shown in the dashboard (not depicte
 
 ## Hypothesis Testing
 
-### Test 1: Is diabetes more prevalent in older people? (age and diabetes outcome)
-
-#### T-test
-
-One-tail t-test using the diabetes class 1 subset (patients with diabetes):
-- H0 (null hypothesis): Average age = 50 years
-- Ha (alt hypothesis): Average age > 50 years
+All these tests are one-tail t-tests using the diabetes class 1 subset (patients with diabetes)
 
 If p > 0.05, fail to reject null
 If p < 0.05, reject null
+
+### Test 1: Is diabetes more prevalent in older people? (age and diabetes outcome)
+
+H0 (null hypothesis): Average age = 50 years
+Ha (alt hypothesis): Average age > 50 years
 
 ![Age t-test results w/ test statistic and p-value](results/age_ttest.png)
 
 According to the t-test results, the p-value is 1.8597552826122074e-144, which is significantly smaller than 0.05, so we can reject the null hypothesis that the average age of the patients with diabetes is equal to 50 years. Therefore, the average age of the diabetes patients is greater than 50 years, implying the correlation between old age and diabetes.
 
-#### Confidence intervals
+### Test 2: Does high blood pressure create a higher risk of diabetes?
+
+H0: average blood pressure = 80 mmHg diastolic (threshold for high blood pressure, according to the NIH)
+Ha: average blood pressure > 80 mmHg diastolic
+
+![Blood pressure t-test results 1](results/blood_pressure_ttest.png)
+
+According to the t-test results, the p-value is 1, which is larger than 0.05, so we fail to reject the null hypothesis that the average blood pressure is 80 mmHg in these diabetes patients, so on average, the diabetes patients don't have incredibly severe hypertension. However, there are still two possibilities left: 
+
+1. on average, the diabetes patients have mild high blood pressure
+2. on average, the diabetes patients have either normal or elevated blood pressure
+
+To figure out which scenario is prevalent, another t-test is needed:
+
+H0: average blood pressure = 80 mmHg diastolic
+Ha: average blood pressure < 80 mmHg diastolic
+
+![Blood pressure t-test results 2](results/bp_ttest2.png)
+
+According to this second t-test, the p-value is less than 2.2e-16, which is significantly smaller than 0.05, so we reject the null hypothesis that the average blood pressure is equal to 80 mmHg diastolic for these diabetes patients. This means that these patients have either normal or elevated blood pressure, which either means that high blood pressure is not a major factor for diabetes or reveals a critical anomaly in this dataset.
 
 ## Insights
 
@@ -154,3 +172,4 @@ https://public.tableau.com/views/DiabetesAnalysis_17858119015890/Dashboard1?:lan
 18. SciPy ttest: https://www.datacamp.com/tutorial/an-introduction-to-python-t-tests
 19. NumPy array conversion: https://numpy.org/doc/stable/user/basics.creation.html
 20. SciPy ttest_1samp() parameters: https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.ttest_1samp.html#scipy.stats.ttest_1samp
+21. R t.test() - https://www.datacamp.com/tutorial/t-tests-r-tutorial
