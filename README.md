@@ -61,7 +61,7 @@ Across both diabetes outcome classes, the majority of patients are considered ov
 
 ![Average blood pressure by diabetes outcome barchart](results/blood_pressure_barchart.png)
 
-According to this bar chart and the tooltips shown in the dashboard (not depicted in this image), the average blood pressure of patients without diabetes is 68.119 mmHg diastolic, and the average blood pressure of patients without diabetes is 71.070 mmHg diastolic. The blood pressures of the two diabetes outcome groups are close together likely due to the unhealthy habits of all patients in this dataset. But on average, the patients with diabetes have higher blood pressures than patients without diabetes (a difference of 2.951 mmHg diastolic in favor of patients with diabetes), implying the strong association of high blood pressure and diabetes. 
+According to this bar chart and the tooltips shown in the dashboard (not depicted in this image), the average blood pressure of patients without diabetes is 68.119 mmHg diastolic, and the average blood pressure of patients with diabetes is 71.070 mmHg diastolic. The blood pressures of the two diabetes outcome groups are close together likely due to the unhealthy habits of all patients in this dataset. But on average, the patients with diabetes have higher blood pressures than patients without diabetes (a difference of 2.951 mmHg diastolic in favor of patients with diabetes), implying the strong association of high blood pressure and diabetes. 
 
 ## Hypothesis Testing
 
@@ -88,7 +88,7 @@ Ha: average blood pressure > 80 mmHg diastolic
 
 According to the t-test results, the p-value is 1, which is larger than 0.05, so we fail to reject the null hypothesis that the average blood pressure is 80 mmHg in these diabetes patients, so on average, the diabetes patients don't have incredibly severe hypertension. However, there are still two possibilities left: 
 
-1. on average, the diabetes patients have mild high blood pressure
+1. on average, the diabetes patients have mildly high blood pressure
 2. on average, the diabetes patients have either normal or elevated blood pressure
 
 To figure out which scenario is prevalent, another t-test is needed:
@@ -100,7 +100,34 @@ Ha: average blood pressure < 80 mmHg diastolic
 
 According to this second t-test, the p-value is less than 2.2e-16, which is significantly smaller than 0.05, so we reject the null hypothesis that the average blood pressure is equal to 80 mmHg diastolic for these diabetes patients. This means that these patients have either normal or elevated blood pressure, which either means that high blood pressure is not a major factor for diabetes or reveals a critical anomaly in this dataset.
 
-## Insights
+### Test 3: Does high BMI create a higher risk of diabetes?
+
+H0: average BMI = 25 (minimum BMI to be considered overweight)
+Ha: average BMI > 25
+
+![BMI t-test results](results/bmi_ttest.png)
+
+According to this t-test, the p-value is less than .0001, which is significantly smaller than 0.05, so we reject the null hypothesis thatthe average BMI is equal to 25 for these diabetes patients. This leaves two possibilities:
+
+1. The average BMI of the diabetes patients is greater than 25 (overweight, obese, extremely obese)
+2. The average BMI of the diabetes patients is less than 25 (normal weight)
+
+We can find out which scenario prevails using confidence intervals
+
+![BMI confidence intervals](results/bmi_confidence_intervals.png)
+
+From these results, we are 95% confident that the true average BMI is between 34.78 and 35.69 when rounding to 2 decimal place. This range is greater than a BMI of 25. Therefore, on average, the diabetes patients are overweight, obese, or extremely obese, implying that a high BMI does create a higher risk of diabetes.
+
+## Summary of Insights
+
+1. High BMI does create a higher risk of diabetes, given that less diabetes patients have a healthy weight according to the BMI pie charts and confidence intervals
+
+2. The relationship of high (diastolic) blood pressure and diabetes risk is not very strong. The bar chart showed that the average blood pressure of the diabetes patients in this dataset is only slightly higher than the average blood pressure of patients without diabetes, and the t-test asserted that on average, the diabetes patients have only normal/elevated diastolic blood pressure. This could be due to 3 factors
+    1. Only diastolic blood pressure was available in this dataset, and a further study into diabetes patients and systolic blood pressure may show different results
+    2. The patients with diabetes and the patients without diabetes are all likely living unhealthy lifestyles, making the differences in blood pressure insignificant
+    3. There could be an undectected anomaly in this dataset
+
+3. According to the age t-test, the average age of diabetes patients is greater than 50 years, implying that diabetes is more prevalent in older people 
 
 ## How to Run/See the Analysis Files
 
@@ -173,3 +200,6 @@ https://public.tableau.com/views/DiabetesAnalysis_17858119015890/Dashboard1?:lan
 19. NumPy array conversion: https://numpy.org/doc/stable/user/basics.creation.html
 20. SciPy ttest_1samp() parameters: https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.ttest_1samp.html#scipy.stats.ttest_1samp
 21. R t.test() - https://www.datacamp.com/tutorial/t-tests-r-tutorial
+22. SAS tutorial: https://www.tutorialspoint.com/sas/index.htm
+23. Benchmark for overweight classification: https://www.nhlbi.nih.gov/sites/default/files/media/docs/bmi_tbl.pdf
+24. SAS confidence intervals using PROC MEANS: https://support.sas.com/documentation/cdl/en/proc/61895/HTML/default/viewer.htm#a002473542.htm
